@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Admission Form | K.B. Public School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #002e5b; --gold: #f4b400; --bg: #f8f9fa; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; padding: 10px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .header { text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; }
+        .section-head { background: #eef2f7; padding: 8px 15px; font-weight: 600; color: var(--primary); margin: 20px 0 10px; border-left: 5px solid var(--gold); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .field { margin-bottom: 12px; }
+        label { display: block; font-size: 0.85rem; margin-bottom: 5px; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        .subject-box { border: 1px solid #ddd; padding: 10px; border-radius: 5px; background: #fffdf5; }
+        .declaration { font-size: 0.8rem; line-height: 1.6; color: #444; background: #fff8e1; padding: 15px; border-radius: 5px; margin-top: 20px; border: 1px solid #ffe082; }
+        .submit-btn { width: 100%; background: #25d366; color: white; border: none; padding: 15px; font-size: 1.1rem; font-weight: 600; border-radius: 8px; cursor: pointer; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1 style="margin:0; color:var(--primary);">K.B. PUBLIC SCHOOL</h1>
+        <p style="margin:5px 0;">प्रवेश हेतु आवेदन पत्र (सत्र 2025-26)</p>
+    </div>
+
+    <form id="fullForm">
+        <div class="section-head">विद्यार्थी का व्यक्तिगत विवरण (Student Details)</div>
+        <div class="grid">
+            <div class="field"><label>छात्र/छात्रा का नाम (CAPITAL)</label><input type="text" id="s_name" required></div>
+            <div class="field"><label>जन्म तिथि (Date of Birth)</label><input type="date" id="dob" required></div>
+            <div class="field"><label>कक्षा (जिसमें प्रवेश चाहिए)</label><input type="text" id="target_class" required></div>
+        </div>
+        <div class="grid">
+            <div class="field"><label>पिता का नाम</label><input type="text" id="f_name" required></div>
+            <div class="field"><label>माता का नाम</label><input type="text" id="m_name" required></div>
+        </div>
+        <div class="grid">
+            <div class="field"><label>पिता का आधार नंबर</label><input type="number" id="f_aadhar"></div>
+            <div class="field"><label>माता का आधार नंबर</label><input type="number" id="m_aadhar"></div>
+        </div>
+
+        <div class="section-head">बैंक और पहचान विवरण (Bank & ID Details)</div>
+        <div class="grid">
+            <div class="field"><label>बैंक का नाम</label><input type="text" id="bank_name"></div>
+            <div class="field"><label>शाखा का नाम</label><input type="text" id="branch_name"></div>
+        </div>
+        <div class="grid">
+            <div class="field"><label>खाता संख्या (A/C No.)</label><input type="number" id="acc_no"></div>
+            <div class="field"><label>IFSC कोड</label><input type="text" id="ifsc"></div>
+        </div>
+        <div class="grid">
+            <div class="field"><label>छात्र का आधार नंबर</label><input type="number" id="s_aadhar"></div>
+            <div class="field"><label>मोबाइल (Aadhar Linked)</label><input type="tel" id="mob1"></div>
+            <div class="field"><label>WhatsApp नंबर</label><input type="tel" id="mob2"></div>
+        </div>
+
+        <div class="section-head">हाई स्कूल विषय चयन (Subject Selection)</div>
+        <div class="grid">
+            <div class="subject-box"><strong>अनिवार्य:</strong> हिन्दी (901), विज्ञान (931), सा० विज्ञान (932)</div>
+            <div class="field">
+                <label>वैकल्पिक विषय चुनें</label>
+                <select id="extra_sub">
+                    <option value="English">अंग्रेजी (917)</option>
+                    <option value="Sanskrit">संस्कृत (923)</option>
+                    <option value="Maths">गणित (928)</option>
+                    <option value="Home Science">गृह विज्ञान (930)</option>
+                    <option value="Art">कला (936)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section-head">संपर्क विवरण (Contact)</div>
+        <div class="field"><label>पूरा पता (Full Address)</label><textarea id="address" rows="2"></textarea></div>
+
+        <div class="declaration">
+            <strong>अभिभावक घोषणा पत्र:</strong> मेरे द्वारा दी गयी समस्त जानकारी पूर्णतया सत्य है। यदि कोई सूचना असत्य पाई जाती है तो इसकी सम्पूर्ण जिम्मेदारी मेरी होगी। यदि मेरा पुत्र/पुत्री बिना सूचना के पांच दिवस तक अनुपस्थित रहता/रहती है तो उसका नाम उपस्थिति पंजिका से निरस्त कर दिया जाय।
+        </div>
+
+        <button type="button" onclick="sendToWhatsApp()" class="submit-btn">
+            <i class="fab fa-whatsapp"></i> व्हाट्सएप पर जमा करें
+        </button>
+    </form>
+</div>
+
+<script>
+function sendToWhatsApp() {
+    const data = {
+        Name: document.getElementById('s_name').value,
+        Father: document.getElementById('f_name').value,
+        Class: document.getElementById('target_class').value,
+        Bank: document.getElementById('bank_name').value,
+        Acc: document.getElementById('acc_no').value,
+        IFSC: document.getElementById('ifsc').value,
+        Aadhar: document.getElementById('s_aadhar').value,
+        Mobile: document.getElementById('mob2').value,
+        Subject: document.getElementById('extra_sub').value
+    };
+
+    if(!data.Name || !data.Father) { alert("कृपया नाम और पिता का नाम भरें!"); return; }
+
+    const message = `*K.B. PUBLIC SCHOOL ADMISSION*%n%n*छात्र:* ${data.Name}%n*पिता:* ${data.Father}%n*कक्षा:* ${data.Class}%n*बैंक:* ${data.Bank}%n*A/C:* ${data.Acc}%n*IFSC:* ${data.IFSC}%n*आधार:* ${data.Aadhar}%n*विषय:* ${data.Subject}%n*मोबाइल:* ${data.Mobile}`;
+    window.open(`https://wa.me/918318371336?text=${message.replace(/ /g, '%20')}`, '_blank');
+}
+</script>
+</body>
+</html>
+
