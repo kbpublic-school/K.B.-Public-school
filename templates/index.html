@@ -3,59 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission Inquiry | KB Public School</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>K.B. Public School | Ballia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body { font-family: 'Poppins', sans-serif; background: #f0f4f8; margin: 0; padding: 20px; }
-        .form-card { background: white; max-width: 450px; margin: auto; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .logo-text { text-align: center; color: #002e5b; font-weight: bold; font-size: 1.5rem; margin-bottom: 20px; }
-        .input-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: 600; color: #444; }
-        input, select { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; }
-        .btn-submit { width: 100%; background: #25d366; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        :root { --primary: #002e5b; --gold: #f4b400; --text-dark: #333; --light-bg: #f9f9f9; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; color: var(--text-dark); background: #fff; }
+        
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-text h2 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--primary); margin: 0; }
+        
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; margin-left: 20px; }
+        .btn-apply { background: var(--gold); padding: 10px 22px; border-radius: 50px; color: #000 !important; }
+
+        .hero { height: 70vh; background: linear-gradient(rgba(0,46,91,0.7), rgba(0,46,91,0.7)), url('https://images.unsplash.com/photo-1523050853063-bd8012fec046?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+        .section { padding: 60px 10%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
+        .card { padding: 30px; border-radius: 15px; background: var(--light-bg); border-bottom: 5px solid var(--gold); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<div class="form-card">
-    <div class="logo-text">Admission 2026-27</div>
-    <form id="admissionForm">
-        <div class="input-group">
-            <label>Student Name</label>
-            <input type="text" id="name" placeholder="Full Name" required>
+<nav>
+    <a href="/" class="logo">
+        <i class="fas fa-graduation-cap" style="font-size: 2rem; color: var(--primary);"></i>
+        <div class="logo-text">
+            <h2>K.B. PUBLIC SCHOOL</h2>
         </div>
-        <div class="input-group">
-            <label>Father's Name</label>
-            <input type="text" id="father" placeholder="Father's Name" required>
-        </div>
-        <div class="input-group">
-            <label>Select Class</label>
-            <select id="class" required>
-                <option value="">Choose...</option>
-                <option value="Nursery">Nursery</option>
-                <option value="Class 1-5">Class 1-5</option>
-                <option value="Class 6-10">Class 6-10</option>
-            </select>
-        </div>
-        <button type="button" onclick="sendToWhatsApp()" class="btn-submit">
-            <i class="fab fa-whatsapp"></i> Send to School Office
-        </button>
-    </form>
-</div>
+    </a>
+    <div class="nav-links">
+        <a href="/admission" class="btn-apply">ADMISSION OPEN</a>
+    </div>
+</nav>
 
-<script>
-function sendToWhatsApp() {
-    const name = document.getElementById('name').value;
-    const father = document.getElementById('father').value;
-    const sClass = document.getElementById('class').value;
+<section class="hero">
+    <h1>K.B. PUBLIC SCHOOL</h1>
+    <p>Shaping Young Minds for a Brighter Future</p>
+    <a href="/admission" style="background: var(--gold); color: black; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold;">ENROLL NOW 2025-26</a>
+</section>
 
-    if(!name || !father || !sClass) { alert("Please fill all details"); return; }
+<section class="section">
+    <h2 style="color: var(--primary);">Why K.B. Public School?</h2>
+    <div class="grid">
+        <div class="card"><i class="fas fa-book-reader"></i><h3>Quality Education</h3><p>Focus on academic excellence and moral values.</p></div>
+        <div class="card"><i class="fas fa-users"></i><h3>Expert Teachers</h3><p>Highly qualified staff for personal attention.</p></div>
+        <div class="card"><i class="fas fa-laptop-code"></i><h3>Modern Labs</h3><p>Equipped with latest technology and computers.</p></div>
+    </div>
+</section>
 
-    const msg = `*KB PUBLIC SCHOOL ADMISSION*%nName: ${name}%nFather: ${father}%nClass: ${sClass}`;
-    window.open(`https://wa.me/918318371336?text=${msg.replace(/ /g, '%20')}`, '_blank');
-}
-</script>
+<a href="https://wa.me/918318371336" class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
+
