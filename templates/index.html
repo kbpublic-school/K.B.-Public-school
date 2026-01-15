@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Inquiry | KB Public School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #f0f4f8; margin: 0; padding: 20px; }
+        .form-card { background: white; max-width: 450px; margin: auto; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .logo-text { text-align: center; color: #002e5b; font-weight: bold; font-size: 1.5rem; margin-bottom: 20px; }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #444; }
+        input, select { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; }
+        .btn-submit { width: 100%; background: #25d366; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <div class="logo-text">Admission 2026-27</div>
+    <form id="admissionForm">
+        <div class="input-group">
+            <label>Student Name</label>
+            <input type="text" id="name" placeholder="Full Name" required>
+        </div>
+        <div class="input-group">
+            <label>Father's Name</label>
+            <input type="text" id="father" placeholder="Father's Name" required>
+        </div>
+        <div class="input-group">
+            <label>Select Class</label>
+            <select id="class" required>
+                <option value="">Choose...</option>
+                <option value="Nursery">Nursery</option>
+                <option value="Class 1-5">Class 1-5</option>
+                <option value="Class 6-10">Class 6-10</option>
+            </select>
+        </div>
+        <button type="button" onclick="sendToWhatsApp()" class="btn-submit">
+            <i class="fab fa-whatsapp"></i> Send to School Office
+        </button>
+    </form>
+</div>
+
+<script>
+function sendToWhatsApp() {
+    const name = document.getElementById('name').value;
+    const father = document.getElementById('father').value;
+    const sClass = document.getElementById('class').value;
+
+    if(!name || !father || !sClass) { alert("Please fill all details"); return; }
+
+    const msg = `*KB PUBLIC SCHOOL ADMISSION*%nName: ${name}%nFather: ${father}%nClass: ${sClass}`;
+    window.open(`https://wa.me/918318371336?text=${msg.replace(/ /g, '%20')}`, '_blank');
+}
+</script>
+
+</body>
+</html>
